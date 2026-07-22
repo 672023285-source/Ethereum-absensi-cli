@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.6",
     "ethers": "^6.17.0",
+    "express": "^5.2.1",
     "viem": "^2.55.1"
   }
 }

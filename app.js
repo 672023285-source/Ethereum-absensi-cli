@@ -38,7 +38,7 @@ async function hadir() {
     console.log("\nMengirim Absensi HADIR...\n");
 
     const tx = await contract.tambahAbsensi(
-        "Arwin",
+        "Elisabeth",
         "Hadir"
     );
 
@@ -58,7 +58,7 @@ async function izin() {
     console.log("\nMengirim Absensi IZIN...\n");
 
     const tx = await contract.tambahAbsensi(
-        "Arwin",
+        "HERI",
         "Izin"
     );
 
