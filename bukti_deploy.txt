@@ -1,0 +1,101 @@
+=================================
+BUKTI DEPLOYMENT SMART CONTRACT
+SISTEM ABSENSI ETHEREUM
+=================================
+
+Network:
+Anvil Local Blockchain
+
+RPC Endpoint:
+http://127.0.0.1:8545
+
+Chain ID:
+31337
+
+
+=================================
+CONTRACT INFORMATION
+=================================
+
+Contract Name:
+Absensi.sol
+
+Contract Address:
+0x5fbdb2315678afecb367f032d93f642f64180aa3
+
+Deployment Transaction Hash:
+0x06ee8175c78becb15cfe1bbfc9a16b74dca5b22e95e1a12561488d03ee0cf4e3
+
+Deployment Block:
+1
+
+Gas Used Deployment:
+591765
+
+
+=================================
+WRITE TRANSACTION
+=================================
+
+Function:
+tambahAbsensi()
+
+Description:
+Transaksi untuk mencatat data absensi ke dalam blockchain.
+
+
+Input Data:
+
+Nama:
+(Belum diisi)
+
+Status:
+(Belum diisi)
+
+
+Transaction Hash:
+(Belum diisi - ambil saat menjalankan aplikasi)
+
+
+Gas Used Write:
+(Belum diisi - ambil dari transaksi)
+
+
+=================================
+READ TRANSACTION
+=================================
+
+Function:
+lihatAbsensi()
+
+Description:
+Membaca data absensi yang telah tersimpan pada smart contract.
+
+
+Output:
+(Belum diisi - hasil pembacaan dari aplikasi)
+
+
+=================================
+SMART CONTRACT INFORMATION
+=================================
+
+Compiler:
+Solidity ^0.8.20
+
+Framework:
+Foundry
+
+Blockchain:
+Ethereum Local Blockchain (Anvil)
+
+
+=================================
+DEPLOYER INFORMATION
+=================================
+
+Deployer Address:
+0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+
+Chain ID:
+31337

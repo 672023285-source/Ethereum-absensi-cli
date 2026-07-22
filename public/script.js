@@ -53,22 +53,26 @@ async function kirimAbsensi(status){
 }
 
 
-// ===============================
-// JUMLAH ABSENSI
-// ===============================
 async function jumlah(){
     try{
         const res = await fetch("/api/jumlah");
         const data = await res.json();
 
-        document.getElementById("jumlah").innerHTML =
-            "Jumlah Absensi : " + data.jumlah;
+        console.log("Data jumlah dari server:", data);
+
+        const el = document.getElementById("jumlah");
+
+        if(!el){
+            console.error("Elemen dengan id='jumlah' tidak ditemukan");
+            return;
+        }
+
+        el.textContent = "Jumlah Absensi : " + data.jumlah;
 
     } catch(err){
-        console.log(err);
+        console.error("Gagal mengambil jumlah:", err);
     }
 }
-
 
 // ===============================
 // WALLET ADMIN
@@ -185,7 +189,22 @@ async function lihatSemua(){
     }
 }
 
+// Di bagian atas server.js, tambahkan ini
+const fs = require('fs');
+const path = require('path');
 
+// Sesuaikan path dengan struktur proyekmu
+// Biasanya ada di ignition/deployments/chain-31337/deployed_addresses.json
+const deploymentData = JSON.parse(
+    fs.readFileSync(
+        path.join(__dirname, 'ignition', 'deployments', 'chain-31337', 'deployed_addresses.json'),
+        'utf8'
+    )
+);
+
+// Ambil alamat berdasarkan nama modul kontrakmu
+// Contoh: 'AbsensiModule#Absensi'
+const CONTRACT_ADDRESS = deploymentData['AbsensiModule#Absensi'];
 // ===============================
 // LOAD AWAL
 // ===============================

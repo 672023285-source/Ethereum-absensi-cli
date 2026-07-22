@@ -12,10 +12,10 @@ app.use(express.static("public"));
 const RPC_URL = "http://127.0.0.1:8545";
 
 const PRIVATE_KEY =
-  "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
+  "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 
 // PENTING: ganti dengan address kontrak hasil deploy (BUKAN private key!)
-const CONTRACT_ADDRESS = "0x5fbdb2315678afecb367f032d93f642f64180aa3";
+const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
@@ -29,19 +29,6 @@ const contract = new ethers.Contract(
   artifact.abi,
   wallet
 );
-
-// =============================
-// WALLET ADMIN
-// =============================
-app.get("/api/wallet", async (req, res) => {
-  try {
-    const address = await wallet.getAddress();
-    res.json({ wallet: address });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
 // =============================
 // HADIR
 // =============================
@@ -88,6 +75,7 @@ app.get("/api/jumlah", async (req, res) => {
     const jumlah = await contract.jumlahAbsensi();
     res.json({ jumlah: Number(jumlah) });
   } catch (err) {
+    console.error("ERROR /api/jumlah:", err); // Tambahkan ini
     res.status(500).json({ error: err.message });
   }
 });
