@@ -11,8 +11,7 @@ const PRIVATE_KEY =
 "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 
 // GANTI jika deploy ulang
-const CONTRACT_ADDRESS =
-"0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6";
+const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6";
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 
